@@ -1,0 +1,35 @@
+[
+  {
+    "extendedLocation": null,
+    "hyperVGeneration": "V1",
+    "id": "/subscriptions/80d3ddff-8440-41d1-bfb3-5ad77c579184/resourceGroups/CLOUD-SHELL-STORAGE-CENTRALINDIA/providers/Microsoft.Compute/images/myPackerImage",
+    "location": "centralindia",
+    "name": "myPackerImage",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "CLOUD-SHELL-STORAGE-CENTRALINDIA",
+    "sourceVirtualMachine": {
+      "id": "/subscriptions/80d3ddff-8440-41d1-bfb3-5ad77c579184/resourceGroups/pkr-Resource-Group-fxl1lsvl5x/providers/Microsoft.Compute/virtualMachines/pkrvmfxl1lsvl5x",
+      "resourceGroup": "pkr-Resource-Group-fxl1lsvl5x"
+    },
+    "storageProfile": {
+      "dataDisks": [],
+      "osDisk": {
+        "blobUri": null,
+        "caching": "ReadWrite",
+        "diskEncryptionSet": null,
+        "diskSizeGb": 30,
+        "managedDisk": {
+          "id": "/subscriptions/80d3ddff-8440-41d1-bfb3-5ad77c579184/resourceGroups/pkr-Resource-Group-fxl1lsvl5x/providers/Microsoft.Compute/disks/pkrosfxl1lsvl5x",
+          "resourceGroup": "pkr-Resource-Group-fxl1lsvl5x"
+        },
+        "osState": "Generalized",
+        "osType": "Linux",
+        "snapshot": null,
+        "storageAccountType": "Standard_LRS"
+      },
+      "zoneResilient": false
+    },
+    "tags": {},
+    "type": "Microsoft.Compute/images"
+  }
+]

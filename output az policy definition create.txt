@@ -1,0 +1,41 @@
+{
+  "description": null,
+  "displayName": null,
+  "id": "/subscriptions/80d3ddff-8440-41d1-bfb3-5ad77c579184/providers/Microsoft.Authorization/policyDefinitions/TaggingPolicy",
+  "metadata": {
+    "createdBy": "1a877aaa-ed95-497d-a77c-a240cb9d4806",
+    "createdOn": "2022-10-19T14:57:30.5247996Z",
+    "updatedBy": null,
+    "updatedOn": null
+  },
+  "mode": "Indexed",
+  "name": "TaggingPolicy",
+  "parameters": null,
+  "policyRule": {
+    "if": {
+      "allof": [
+        {
+          "equals": "Microsoft.Resources/subscriptions/Resources",
+          "field": "type"
+        },
+        {
+          "exists": "false",
+          "field": "tags"
+        }
+      ]
+    },
+    "then": {
+      "effect": "deny"
+    }
+  },
+  "policyType": "Custom",
+  "systemData": {
+    "createdAt": "2022-10-19T14:57:30.471450+00:00",
+    "createdBy": "sambuddha6@hotmail.com",
+    "createdByType": "User",
+    "lastModifiedAt": "2022-10-19T14:57:30.471450+00:00",
+    "lastModifiedBy": "sambuddha6@hotmail.com",
+    "lastModifiedByType": "User"
+  },
+  "type": "Microsoft.Authorization/policyDefinitions"
+}
