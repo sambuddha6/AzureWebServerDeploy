@@ -37,7 +37,7 @@ For this project, you will write a Packer template and a Terraform template to d
 20. Run 'az image list' to confirm if the packer image is deleted
 
 ### Output
-1. Refer to the file in the repo 'output az image list'
-2. Refer to the file in the repo 'output az policy definition create' 
-3. Refer to the file in the repo 'output terraform plan'
-4. Refer to the file in the repo 'output terraform show' 
+1. Refer to the file in the repo 'output az image list.txt'
+2. Refer to the file in the repo 'output az policy definition create.txt' 
+3. Refer to the file in the repo 'output terraform plan.txt'
+4. Refer to the file in the repo 'output terraform show.txt' 
