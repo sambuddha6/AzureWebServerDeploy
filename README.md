@@ -1,7 +1,7 @@
 # Azure Infrastructure Operations Project: Deploying a scalable IaaS web server in Azure
 
 ### Introduction
-For this project, you will write a Packer template and a Terraform template to deploy a customizable, scalable web server in Azure.
+For this project, you will write a Packer template and a Terraform template to deploy a customizable, scalable web server in Azure. We will use Packer to create a server image, and Terraform to create a template for deploying a scalable cluster of servers
 
 ### Dependencies
 1. Create an [Azure Account](https://portal.azure.com) 
@@ -31,7 +31,7 @@ For this project, you will write a Packer template and a Terraform template to d
 14. Once the terraform plan command is successful check if the file 'solution.plan is created 
 15. Run 'terraform apply "solution.plan"' to create the resources - upon successful completion it should give the message 'Apply complete! Resources: 14 added, 0 changed, 0 destroyed.'
 16. Run 'terraform show' to see the resources created and it should give a message like Output #4
-17. Run 'terraform destroy' to delete the resources created 
+17. Run 'terraform destroy' to delete the resources created, it will ask for user confirmation
 18. Run 'terraform show' to confirmed the resources have been destroyed
 19. Run 'az image delete -g cloud-shell-storage-centralindia -n myPackerImage' to delete the packer image
 20. Run 'az image list' to confirm if the packer image is deleted
