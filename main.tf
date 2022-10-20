@@ -10,6 +10,10 @@ locals {
 resource "azurerm_resource_group" "example"{
 	name = "${var.prefix}-resources"
 	location = var.location
+	
+	tags = {
+		name = "UdacityAzureInfra"
+	}
 }
 
 resource "azurerm_virtual_network" "example"{
@@ -17,6 +21,10 @@ resource "azurerm_virtual_network" "example"{
 	address_space 		= ["10.0.0.0/16"]
 	location 			= azurerm_resource_group.example.location
 	resource_group_name = azurerm_resource_group.example.name
+	
+	tags = {
+		name = "UdacityAzureInfra"
+	}
 }
 
 resource "azurerm_subnet" "example"{
@@ -27,33 +35,37 @@ resource "azurerm_subnet" "example"{
 }
 
 resource "azurerm_network_security_group" "example" {
-  name                = "${var.prefix}-SecurityGroup"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
+	name                = "${var.prefix}-SecurityGroup"
+	location            = azurerm_resource_group.example.location
+	resource_group_name = azurerm_resource_group.example.name
 
-  security_rule {
-    name                       = "${var.prefix}-SecurityRule1"
-    priority                   = 100
-    direction                  = "Inbound"
-    access                     = "Deny"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_range     = "*"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
-  }
+	security_rule {
+	name                       = "${var.prefix}-SecurityRule1"
+	priority                   = 100
+	direction                  = "Inbound"
+	access                     = "Deny"
+	protocol                   = "Tcp"
+	source_port_range          = "*"
+	destination_port_range     = "*"
+	source_address_prefix      = "*"
+	destination_address_prefix = "*"
+	}
+
+	security_rule {
+	name                       = "${var.prefix}-SecurityRule2"
+	priority                   = 100
+	direction                  = "Outbound"
+	access                     = "Allow"
+	protocol                   = "Tcp"
+	source_port_range          = "*"
+	destination_port_range     = "*"
+	source_address_prefix      = "*"
+	destination_address_prefix = "*"
+	}
   
-   security_rule {
-    name                       = "${var.prefix}-SecurityRule2"
-    priority                   = 100
-    direction                  = "Outbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_range     = "*"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
-  }
+  	tags = {
+		name = "UdacityAzureInfra"
+	}
 }
 
 resource "azurerm_network_interface" "example"{
@@ -69,7 +81,7 @@ resource "azurerm_network_interface" "example"{
 	}
 		
 	tags = {
-		environment = "testing"
+		name = "UdacityAzureInfra"
 	}
 }
 
@@ -86,6 +98,10 @@ resource "azurerm_public_ip" "example" {
 	resource_group_name          = azurerm_resource_group.example.name
 	allocation_method            = "Static"
 	domain_name_label            = random_string.fqdn.result
+	
+	tags = {
+		name = "UdacityAzureInfra"
+	}
 }
 
 resource "azurerm_lb" "example" {
@@ -96,6 +112,10 @@ resource "azurerm_lb" "example" {
 	frontend_ip_configuration {
 		name                 = "${var.prefix}-PublicIPAddress"
 		public_ip_address_id = azurerm_public_ip.example.id
+	}
+	
+	tags = {
+		name = "UdacityAzureInfra"
 	}
 }
 
@@ -110,7 +130,7 @@ resource "azurerm_availability_set" "example" {
 	resource_group_name = azurerm_resource_group.example.name
 	
 	tags = {
-		environment = "testing"
+		name = "UdacityAzureInfra"
 	}
 }
 
@@ -123,7 +143,7 @@ resource "azurerm_managed_disk" "example" {
 	disk_size_gb         = "1"
 
 	tags = {
-	environment = "testing"
+		name = "UdacityAzureInfra"
 	}
 }
 
@@ -155,5 +175,9 @@ resource "azurerm_linux_virtual_machine" "example" {
 	os_disk {
 	storage_account_type = "Standard_LRS"
 	caching = "ReadWrite"
+	}
+	
+	tags = {
+		name = "UdacityAzureInfra"
 	}
 }
