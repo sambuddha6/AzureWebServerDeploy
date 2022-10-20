@@ -29,12 +29,13 @@ For this project, we will write a Packer template and a Terraform template to de
     Enter a value:
 13. Generically to prompt user input for any variable defined in the vars.tf file, delete the default value, currently for vm_count variable the default value is removded
 14. Once the terraform plan command is successful check if the file 'solution.plan is created 
-15. Run 'terraform apply "solution.plan"' to create the resources - upon successful completion it should give the message 'Apply complete! Resources: 14 added, 0 changed, 0 destroyed.'
-16. Run 'terraform show' to see the resources created and it should give a message like Output #4
-17. Run 'terraform destroy' to delete the resources created, it will ask for user confirmation
-18. Run 'terraform show' to confirmed the resources have been destroyed
-19. Run 'az image delete -g cloud-shell-storage-centralindia -n myPackerImage' to delete the packer image
-20. Run 'az image list' to confirm if the packer image is deleted
+15. Run 'terraform apply "solution.plan"' to create the resources - upon successful completion it should give the message 'Apply complete! Resources: 14 added, 0 changed, 0 destroyed.' The screenshot looks like below.
+    ![Terraform_Apply](./terraform_apply.JPG)  
+17. Run 'terraform show' to see the resources created and it should give a message like Output #4
+18. Run 'terraform destroy' to delete the resources created, it will ask for user confirmation
+19. Run 'terraform show' to confirmed the resources have been destroyed
+20. Run 'az image delete -g cloud-shell-storage-centralindia -n myPackerImage' to delete the packer image
+21. Run 'az image list' to confirm if the packer image is deleted
 
 ### Output
 1. Refer to the file in the repo 'output az image list.txt'
