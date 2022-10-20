@@ -35,4 +35,5 @@ variable "admin_password" {
 
 variable "vm_count" {
    description = "The number of Virtual Machines"
+   default     = 2
 }
